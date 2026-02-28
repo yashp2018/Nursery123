@@ -7,6 +7,20 @@ import ProductCard from "@/components/ProductCard";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useState, useRef, useEffect } from "react";
 
+// Gallery Images
+import customerVisit from "@/assets/img/Customer-visit.jpeg";
+import img1 from "@/assets/img/IMG-20251221-WA0017.jpg.jpeg";
+import img2 from "@/assets/img/IMG-20251221-WA0020.jpg.jpeg";
+import img3 from "@/assets/img/IMG-20251221-WA0021.jpg.jpeg";
+import img4 from "@/assets/img/IMG-20251221-WA0030.jpg.jpeg";
+import img5 from "@/assets/img/IMG-20251221-WA0031.jpg.jpeg";
+import img6 from "@/assets/img/IMG-20251221-WA0033.jpg.jpeg";
+import img7 from "@/assets/img/IMG-20251221-WA0034.jpg.jpeg";
+import img8 from "@/assets/img/IMG-20251221-WA0037.jpg.jpeg";
+import img9 from "@/assets/img/IMG-20251221-WA0040.jpg.jpeg";
+import img10 from "@/assets/img/IMG-20251221-WA0043.jpg.jpeg";
+import img11 from "@/assets/img/IMG-20251221-WA0046.jpg.jpeg";
+
 const stats = [
   { icon: Award, value: 28, suffix: "+", label: "Years Experience" },
   { icon: Sprout, value: 10, suffix: "L+", label: "Plants Supplied" },
@@ -31,18 +45,18 @@ const testimonials = [
 ];
 
 const galleryImages = [
-  { src: "/src/assets/img/Customer-visit.jpeg", category: "Customer Visit", title: "Customer Farm Visit" },
-  { src: "/src/assets/img/IMG-20251221-WA0017.jpg.jpeg", category: "Nursery", title: "Our Nursery" },
-  { src: "/src/assets/img/IMG-20251221-WA0020.jpg.jpeg", category: "Nursery", title: "Seedling Production" },
-  { src: "/src/assets/img/IMG-20251221-WA0021.jpg.jpeg", category: "Nursery", title: "Quality Plants" },
-  { src: "/src/assets/img/IMG-20251221-WA0030.jpg.jpeg", category: "Seminar", title: "Farmer Training" },
-  { src: "/src/assets/img/IMG-20251221-WA0031.jpg.jpeg", category: "Seminar", title: "Knowledge Sharing" },
-  { src: "/src/assets/img/IMG-20251221-WA0033.jpg.jpeg", category: "Nursery", title: "Grafting Process" },
-  { src: "/src/assets/img/IMG-20251221-WA0034.jpg.jpeg", category: "Nursery", title: "Plant Care" },
-  { src: "/src/assets/img/IMG-20251221-WA0037.jpg.jpeg", category: "Customer Visit", title: "Happy Customers" },
-  { src: "/src/assets/img/IMG-20251221-WA0040.jpg.jpeg", category: "Nursery", title: "Growing Facility" },
-  { src: "/src/assets/img/IMG-20251221-WA0043.jpg.jpeg", category: "Seminar", title: "Agricultural Workshop" },
-  { src: "/src/assets/img/IMG-20251221-WA0046.jpg.jpeg", category: "Nursery", title: "Healthy Seedlings" },
+  { src: customerVisit, category: "Customer Visit", title: "Customer Farm Visit" },
+  { src: img1, category: "Nursery", title: "Our Nursery" },
+  { src: img2, category: "Nursery", title: "Seedling Production" },
+  { src: img3, category: "Nursery", title: "Quality Plants" },
+  { src: img4, category: "Seminar", title: "Farmer Training" },
+  { src: img5, category: "Seminar", title: "Knowledge Sharing" },
+  { src: img6, category: "Nursery", title: "Grafting Process" },
+  { src: img7, category: "Nursery", title: "Plant Care" },
+  { src: img8, category: "Customer Visit", title: "Happy Customers" },
+  { src: img9, category: "Nursery", title: "Growing Facility" },
+  { src: img10, category: "Seminar", title: "Agricultural Workshop" },
+  { src: img11, category: "Nursery", title: "Healthy Seedlings" },
 ];
 
 function StatCard({ stat }: { stat: typeof stats[0] }) {
