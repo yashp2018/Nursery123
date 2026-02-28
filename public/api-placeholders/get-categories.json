@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "data": [
+    { "id": "vegetables", "name": "Vegetable Plants", "icon": "🥬", "crop_count": 5, "variety_count": 26 },
+    { "id": "fruits", "name": "Fruit Plants", "icon": "🍉", "crop_count": 3, "variety_count": 8 },
+    { "id": "flowers", "name": "Flower Plants", "icon": "🌸", "crop_count": 2, "variety_count": 4 }
+  ]
+}

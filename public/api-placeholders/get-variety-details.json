@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "id": "v1",
+    "name": "Arka Rakshak",
+    "company": "IIHR Bangalore",
+    "crop_id": "tomato",
+    "crop_name": "Tomato",
+    "category_id": "vegetables",
+    "category_name": "Vegetable Plants",
+    "duration_days": 25,
+    "stock": 50000,
+    "min_order_qty": 1000,
+    "price_ex_factory": 3.5,
+    "price_15k": 3.0,
+    "price_30k": 2.5,
+    "delivery_local_charge": 0.2,
+    "delivery_250km_charge": 0.5,
+    "description": "Triple disease resistant grafted tomato variety.",
+    "features": ["Disease Resistant", "High Yield", "Grafted", "Polyhouse Ready"],
+    "image_url": "/assets/images/product-tomato.jpg"
+  }
+}

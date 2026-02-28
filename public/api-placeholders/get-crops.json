@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": [
+    { "id": "tomato", "name": "Tomato", "category_id": "vegetables", "variety_count": 8 },
+    { "id": "chili", "name": "Chili", "category_id": "vegetables", "variety_count": 6 },
+    { "id": "brinjal", "name": "Brinjal", "category_id": "vegetables", "variety_count": 5 },
+    { "id": "capsicum", "name": "Capsicum", "category_id": "vegetables", "variety_count": 4 },
+    { "id": "cucumber", "name": "Cucumber", "category_id": "vegetables", "variety_count": 3 },
+    { "id": "watermelon", "name": "Watermelon", "category_id": "fruits", "variety_count": 4 }
+  ]
+}
