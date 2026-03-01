@@ -20,6 +20,7 @@ import img8 from "@/assets/img/IMG-20251221-WA0037.jpg.jpeg";
 import img9 from "@/assets/img/IMG-20251221-WA0040.jpg.jpeg";
 import img10 from "@/assets/img/IMG-20251221-WA0043.jpg.jpeg";
 import img11 from "@/assets/img/IMG-20251221-WA0046.jpg.jpeg";
+import processImage from "@/assets/img/Process.png";
 
 const stats = [
   { icon: Award, value: 28, suffix: "+", label: "Years Experience" },
@@ -75,15 +76,7 @@ function StatCard({ stat }: { stat: typeof stats[0] }) {
 export default function Index() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [cropSliderPos, setCropSliderPos] = useState(0);
-  const [gallerySlide, setGallerySlide] = useState(0);
   const allCrops = categories.flatMap(c => c.crops);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGallerySlide((prev) => (prev + 1) % galleryImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="min-h-screen">
@@ -348,7 +341,7 @@ export default function Index() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sampleVarieties.map((v, i) => (
+            {sampleVarieties.slice(0, 6).map((v, i) => (
               <motion.div
                 key={v.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -410,6 +403,152 @@ export default function Index() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== GRAFTING PROCESS PREVIEW ===== */}
+      <section className="py-20 surface-warm" id="grafting-preview">
+        <div className="container-nursery">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em] font-sans">Our Technology</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-4">
+              Advanced Grafting Process
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Combining the best qualities of two plants into one stronger, more productive unit using Japanese grafting technology.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-card p-6 rounded-2xl border-2 border-primary/20 hover-lift">
+                  <div className="text-4xl mb-3">🌿</div>
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Scion</h3>
+                  <p className="text-sm text-muted-foreground">Upper portion producing quality fruits</p>
+                </div>
+                <div className="bg-card p-6 rounded-2xl border-2 border-primary/20 hover-lift">
+                  <div className="text-4xl mb-3">🌱</div>
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Rootstock</h3>
+                  <p className="text-sm text-muted-foreground">Strong roots with disease resistance</p>
+                </div>
+                <div className="bg-card p-6 rounded-2xl border-2 border-accent/20 hover-lift col-span-2">
+                  <div className="text-4xl mb-3">✅</div>
+                  <h3 className="font-display text-lg font-bold text-primary mb-2">Result: Superior Plant</h3>
+                  <p className="text-sm text-muted-foreground">98%+ survival rate with higher yields</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-4"
+            >
+              {[
+                { icon: Shield, title: "Disease Protection", desc: "Protects from soil-borne diseases" },
+                { icon: Sprout, title: "Stronger Growth", desc: "Enhanced root system and vigor" },
+                { icon: Star, title: "Higher Yield", desc: "Increased production and quality" },
+              ].map((benefit, i) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-4 bg-card p-4 rounded-xl border border-border hover-lift"
+                >
+                  <div className="w-10 h-10 rounded-lg gradient-cta flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-display font-bold text-foreground mb-1">{benefit.title}</h4>
+                    <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link
+              to="/grafting"
+              className="inline-flex items-center gap-2 gradient-cta text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:shadow-elevated transition-all hover:scale-105 btn-ripple"
+            >
+              Learn About Grafting <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== PROCESS DIAGRAM ===== */}
+      <section className="py-20" id="process-preview">
+        <div className="container-nursery">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em] font-sans">Our Methodology</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-4">
+              Complete Process
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">From seed selection to dispatch - our 10-step quality process ensures premium grafted seedlings</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto mb-12"
+          >
+            <Link to="/process" className="block group">
+              <div className="relative rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all">
+                <img 
+                  src={processImage} 
+                  alt="Complete Grafting Process" 
+                  className="w-full group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-8 left-8 right-8 translate-y-4 group-hover:translate-y-0 transition-transform">
+                  <p className="text-primary-foreground font-semibold text-lg md:text-xl drop-shadow-lg">
+                    Click to view detailed 11-step process →
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link
+              to="/process"
+              className="inline-flex items-center gap-2 gradient-cta text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:shadow-elevated transition-all hover:scale-105 btn-ripple"
+            >
+              View Detailed Process <ArrowRight className="w-5 h-5" />
+            </Link>
+            <p className="text-sm text-muted-foreground mt-4">
+              15 days from grafting to dispatch with 98%+ success rate
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -547,7 +686,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ===== ANIMATED GALLERY ===== */}
+      {/* ===== GALLERY PREVIEW ===== */}
       <section className="py-20 overflow-hidden" id="gallery">
         <div className="container-nursery">
           <motion.div
@@ -570,118 +709,55 @@ export default function Index() {
             <p className="text-muted-foreground max-w-xl mx-auto">Explore our nursery, customer visits, and farmer training seminars</p>
           </motion.div>
 
-          {/* 3D Carousel Effect */}
-          <div className="relative h-[500px] md:h-[600px] perspective-1000">
-            <div className="absolute inset-0 flex items-center justify-center">
-              {galleryImages.map((img, i) => {
-                const offset = (i - gallerySlide + galleryImages.length) % galleryImages.length;
-                const isActive = offset === 0;
-                const isPrev = offset === galleryImages.length - 1;
-                const isNext = offset === 1;
-                const isVisible = isActive || isPrev || isNext || offset === 2 || offset === galleryImages.length - 2;
-                
-                return (
-                  <motion.div
-                    key={i}
-                    initial={false}
-                    animate={{
-                      x: isActive ? 0 : isNext ? '60%' : isPrev ? '-60%' : offset < galleryImages.length / 2 ? '120%' : '-120%',
-                      scale: isActive ? 1 : isNext || isPrev ? 0.75 : 0.5,
-                      rotateY: isActive ? 0 : isNext ? 25 : isPrev ? -25 : offset < galleryImages.length / 2 ? 45 : -45,
-                      opacity: isActive ? 1 : isNext || isPrev ? 0.6 : 0.3,
-                      zIndex: isActive ? 30 : isNext || isPrev ? 20 : 10,
-                    }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="absolute w-[85%] md:w-[600px] h-[400px] md:h-[500px] cursor-pointer"
-                    onClick={() => !isActive && setGallerySlide(i)}
-                    style={{
-                      transformStyle: 'preserve-3d',
-                      display: isVisible ? 'block' : 'none'
-                    }}
-                  >
-                    <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl group">
-                      <img
-                        src={img.src}
-                        alt={img.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent" />
-                      
-                      {isActive && (
-                        <motion.div
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: 0.3 }}
-                          className="absolute bottom-0 left-0 right-0 p-8"
-                        >
-                          <motion.span 
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ type: "spring", delay: 0.4 }}
-                            className="inline-block bg-accent text-accent-foreground text-xs font-bold px-4 py-2 rounded-full mb-3 shadow-lg"
-                          >
-                            {img.category}
-                          </motion.span>
-                          <h3 className="font-display text-2xl md:text-4xl font-bold text-primary-foreground drop-shadow-lg">
-                            {img.title}
-                          </h3>
-                        </motion.div>
-                      )}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Animated Navigation Buttons */}
-            <motion.button
-              whileHover={{ scale: 1.1, x: -5 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setGallerySlide(gallerySlide > 0 ? gallerySlide - 1 : galleryImages.length - 1)}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-40 w-14 h-14 rounded-full bg-primary text-primary-foreground backdrop-blur-sm flex items-center justify-center hover:shadow-glow transition-all"
-            >
-              <ChevronLeft className="w-7 h-7" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1, x: 5 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setGallerySlide((gallerySlide + 1) % galleryImages.length)}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-40 w-14 h-14 rounded-full bg-primary text-primary-foreground backdrop-blur-sm flex items-center justify-center hover:shadow-glow transition-all"
-            >
-              <ChevronRight className="w-7 h-7" />
-            </motion.button>
-          </div>
-
-          {/* Animated Progress Bar */}
-          <div className="max-w-md mx-auto mt-12">
-            <div className="flex items-center gap-2">
-              {galleryImages.map((_, i) => (
-                <motion.button
-                  key={i}
-                  onClick={() => setGallerySlide(i)}
-                  className="relative flex-1 h-1.5 bg-border rounded-full overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      width: i === gallerySlide ? '100%' : '0%',
-                    }}
-                    transition={{ duration: i === gallerySlide ? 4 : 0.3 }}
-                    className="h-full bg-gradient-to-r from-primary to-accent"
+          {/* 2 Featured Images */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+            {galleryImages.slice(0, 2).map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="group relative rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all cursor-pointer hover-lift"
+              >
+                <div className="aspect-[4/3] relative">
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                </motion.button>
-              ))}
-            </div>
-            <motion.p 
-              key={gallerySlide}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-center text-sm text-muted-foreground mt-4"
-            >
-              {gallerySlide + 1} / {galleryImages.length}
-            </motion.p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <span className="inline-block bg-accent text-accent-foreground text-xs font-bold px-4 py-2 rounded-full mb-3 shadow-lg">
+                      {img.category}
+                    </span>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground drop-shadow-lg">
+                      {img.title}
+                    </h3>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* View Gallery Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 gradient-cta text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:shadow-elevated transition-all hover:scale-105 btn-ripple"
+            >
+              View Full Gallery <ArrowRight className="w-5 h-5" />
+            </Link>
+            <p className="text-sm text-muted-foreground mt-4">
+              {galleryImages.length}+ photos from our nursery, events & customer visits
+            </p>
+          </motion.div>
         </div>
       </section>
 

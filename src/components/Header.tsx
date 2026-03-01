@@ -105,24 +105,20 @@ export default function Header() {
         }`}
       >
         <div className="container-nursery flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src={logo} alt="Sanap Hi-Tech Nursery" className="w-11 h-11 rounded-xl shadow-card group-hover:scale-110 transition-all duration-300" />
-            <div>
-              <h1 className="text-lg md:text-xl font-display font-bold text-primary leading-tight tracking-tight">
-                Sanap Hi-Tech
-              </h1>
-              <p className="text-[10px] md:text-xs text-muted-foreground -mt-0.5 font-sans tracking-widest uppercase">
-                Premium Nursery
-              </p>
-            </div>
+          {/* Logo - Coin Form */}
+          <Link to="/" className="group">
+            <img 
+              src={logo} 
+              alt="Sanap Hi-Tech Nursery" 
+              className="w-14 h-14 md:w-16 md:h-16 rounded-full shadow-elevated group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 border-2 border-primary/20" 
+            />
           </Link>
 
           {/* Desktop Mega Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link to="/" className="font-medium text-foreground hover:text-primary transition-colors relative group">
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+          <nav className="hidden lg:flex items-center gap-6">
+            <Link to="/" className="group relative px-3 py-2">
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Home</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </Link>
 
             {/* Products Mega Dropdown */}
@@ -131,13 +127,11 @@ export default function Header() {
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              <Link
-                to="/products"
-                className="font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 relative group"
-              >
-                Products <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
+              <button className="group relative px-3 py-2 flex items-center gap-1.5">
+                <span className="font-medium text-foreground group-hover:text-primary transition-colors">Products</span>
+                <ChevronDown className={`w-4 h-4 text-foreground group-hover:text-primary transition-all duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              </button>
 
               <AnimatePresence>
                 {dropdownOpen && (
@@ -192,13 +186,32 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            <Link to="/about" className="font-medium text-foreground hover:text-primary transition-colors relative group">
-              About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            <Link to="/grafting" className="group relative px-3 py-2">
+              <div className="flex items-center gap-1.5">
+                <span className="font-medium text-foreground group-hover:text-primary transition-colors">Grafting</span>
+                <span className="text-[10px] font-bold bg-accent text-accent-foreground px-1.5 py-0.5 rounded-full">NEW</span>
+              </div>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </Link>
-            <Link to="/contact" className="font-medium text-foreground hover:text-primary transition-colors relative group">
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            
+            <Link to="/process" className="group relative px-3 py-2">
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Process</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </Link>
+            
+            <Link to="/gallery" className="group relative px-3 py-2">
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Gallery</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </Link>
+            
+            <Link to="/about" className="group relative px-3 py-2">
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">About</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </Link>
+            
+            <Link to="/contact" className="group relative px-3 py-2">
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Contact</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </Link>
           </nav>
 
@@ -255,6 +268,9 @@ export default function Header() {
                 {[
                   { to: "/", label: "Home" },
                   { to: "/products", label: "Products" },
+                  { to: "/grafting", label: "Grafting" },
+                  { to: "/process", label: "Process" },
+                  { to: "/gallery", label: "Gallery" },
                   { to: "/about", label: "About" },
                   { to: "/contact", label: "Contact" },
                   { to: "/login", label: "Login / Register" },

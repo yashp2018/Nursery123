@@ -18,6 +18,9 @@ import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Grafting from "./pages/Grafting";
+import Gallery from "./pages/Gallery";
+import Process from "./pages/Process";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +45,9 @@ const App = () => (
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/about" element={<About />} />
+              <Route path="/grafting" element={<Grafting />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/process" element={<Process />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
