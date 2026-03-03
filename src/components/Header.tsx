@@ -37,8 +37,8 @@ export default function Header() {
             <a href="mailto:sanaphitechnursery@gmail.com" className="flex items-center gap-1.5 hover:text-accent transition-colors">
               <Mail className="w-3.5 h-3.5" /> sanaphitechnursery@gmail.com
             </a>
-            <a href="tel:+919823044556" className="flex items-center gap-1.5 hover:text-accent transition-colors">
-              <Phone className="w-3.5 h-3.5" /> +91 98230 44556
+            <a href="tel:+917447770803" className="flex items-center gap-1.5 hover:text-accent transition-colors">
+              <Phone className="w-3.5 h-3.5" /> +91 74477 70803
             </a>
           </div>
           <div className="flex items-center gap-4">

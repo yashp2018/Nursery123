@@ -58,16 +58,16 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Sheetal Sanap */}
+            {/* Shital Sanap */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card rounded-3xl shadow-elevated overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 md:p-10">
                 <div className="flex flex-col items-center text-center lg:order-last">
                   <img src={sheetalImage} alt="Sheetal Avinash Sanap" className="w-64 h-64 rounded-2xl object-cover shadow-xl mb-4 ring-4 ring-accent/10" />
-                  <h3 className="font-display text-2xl font-bold text-foreground">Sheetal Avinash Sanap</h3>
+                  <h3 className="font-display text-2xl font-bold text-foreground">Shital Avinash Sanap</h3>
                   <p className="text-sm text-primary font-semibold mt-1">Director</p>
                 </div>
                 <div className="lg:col-span-2 space-y-4 text-foreground/80 leading-relaxed">
-                  <p>Mrs. Sheetal Avinash Sanap, Director of Sanap Hi-Tech Nursery (I) Pvt. Ltd., was born into a farming family. From her early childhood, she developed a deep passion for agriculture. After marriage, being part of an agriculturally rooted family, she continued to be closely exposed to farming discussions and the everyday struggles of farmers.</p>
+                  <p>Mrs. Shital Avinash Sanap, Director of Sanap Hi-Tech Nursery (I) Pvt. Ltd., was born into a farming family. From her early childhood, she developed a deep passion for agriculture. After marriage, being part of an agriculturally rooted family, she continued to be closely exposed to farming discussions and the everyday struggles of farmers.</p>
                   <p>She realized that although women contribute immensely to agriculture, their efforts often go unrecognized in society. Recognizing the resilience of women in farming, Mrs. Sanap has consistently worked to raise awareness about their contribution.</p>
                   <p>In the daily operations of the nursery, she interacts with women workers with empathy and understanding, ensuring a supportive environment. Her humility, compassion, and sincerity have helped her build strong, heartfelt connections with women farmers.</p>
                   <p className="text-primary font-semibold italic">"The labor of women farmers is not just the strength of their families, but a true asset to society. Their work deserves rightful recognition and respect."</p>

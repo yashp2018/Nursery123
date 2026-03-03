@@ -35,9 +35,9 @@ export default function Contact() {
               <h2 className="font-display text-2xl font-bold text-foreground mb-6">Get In Touch</h2>
               <div className="space-y-6">
                 {[
-                  { icon: Phone, label: "Phone", value: "+91 98230 44556", href: "tel:+919823044556" },
-                  { icon: Mail, label: "Email", value: "info@sanapnursery.com", href: "mailto:info@sanapnursery.com" },
-                  { icon: MapPin, label: "Address", value: "Narayangaon, Junnar, Pune, Maharashtra 410504", href: "#" },
+                  { icon: Phone, label: "Phone", value: "+91 74477 70803 / 804 / 805", href: "tel:+917447770803" },
+                  { icon: Mail, label: "Email", value: "sanaphitechnursery@gmail.com", href: "mailto:sanaphitechnursery@gmail.com" },
+                  { icon: MapPin, label: "Address", value: "Dhakambe, Dindori Road, Tal. Dindori, Dist. Nashik", href: "#" },
                   { icon: Clock, label: "Working Hours", value: "Mon–Sat: 8:00 AM – 6:00 PM", href: "#" },
                 ].map((item) => (
                   <a key={item.label} href={item.href} className="flex items-start gap-4 group">

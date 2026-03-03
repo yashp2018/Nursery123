@@ -100,7 +100,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-primary-foreground/50 mb-0.5">Phone</p>
-                  <a href="tel:+919823044556" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">+91 98230 44556</a>
+                  <a href="tel:+917447770803" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors block">+91 74477 70803</a>
+                  <a href="tel:+917447770804" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors block">+91 74477 70804</a>
+                  <a href="tel:+917447770805" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors block">+91 74477 70805</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -109,7 +111,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-primary-foreground/50 mb-0.5">Email</p>
-                  <span className="text-primary-foreground/80">info@sanapnursery.com</span>
+                  <span className="text-primary-foreground/80">sanaphitechnursery@gmail.com</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -118,7 +120,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-primary-foreground/50 mb-0.5">Address</p>
-                  <span className="text-primary-foreground/80">Narayangaon, Junnar, Pune, Maharashtra 410504</span>
+                  <span className="text-primary-foreground/80">Dhakambe, Dindori Road, Tal. Dindori, Dist. Nashik</span>
                 </div>
               </li>
             </ul>
