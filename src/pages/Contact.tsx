@@ -37,7 +37,7 @@ export default function Contact() {
                 {[
                   { icon: Phone, label: "Phone", value: "+91 74477 70803 / 804 / 805", href: "tel:+917447770803" },
                   { icon: Mail, label: "Email", value: "sanaphitechnursery@gmail.com", href: "mailto:sanaphitechnursery@gmail.com" },
-                  { icon: MapPin, label: "Address", value: "Dhakambe, Dindori Road, Tal. Dindori, Dist. Nashik", href: "#" },
+                  { icon: MapPin, label: "Address", value: "Tal. Dindori, Dist. Nashik - 422 004, Mah. INDIA, Dindori road", href: "#" },
                   { icon: Clock, label: "Working Hours", value: "Mon–Sat: 8:00 AM – 6:00 PM", href: "#" },
                 ].map((item) => (
                   <a key={item.label} href={item.href} className="flex items-start gap-4 group">

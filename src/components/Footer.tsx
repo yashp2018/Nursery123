@@ -120,7 +120,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-primary-foreground/50 mb-0.5">Address</p>
-                  <span className="text-primary-foreground/80">Dhakambe, Dindori Road, Tal. Dindori, Dist. Nashik</span>
+                  <span className="text-primary-foreground/80">Tal. Dindori, Dist. Nashik - 422 004, Mah. INDIA, Dindori road</span>
                 </div>
               </li>
             </ul>
