@@ -41,21 +41,58 @@ export default function Products() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="gradient-hero text-primary-foreground py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-20 w-40 h-40 bg-accent rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-20 w-60 h-60 bg-primary-foreground rounded-full blur-3xl" />
-        </div>
-        <div className="container-nursery relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="text-sm text-accent font-semibold uppercase tracking-[0.2em]">Shop</span>
-            <h1 className="font-display text-3xl md:text-5xl font-bold mt-2 mb-3">Product Catalog</h1>
-            <p className="text-primary-foreground/70 text-lg max-w-lg">Browse our premium grafted seedling varieties</p>
+      <section className="bg-background py-16">
+        <div className="container-nursery">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">Product Catalogue</h1>
+            <p className="text-xl text-accent font-semibold mb-8">Select a Category</p>
           </motion.div>
+
+          {/* Category Pills */}
+          <div className="flex flex-wrap justify-center gap-3 bg-muted/30 rounded-full p-3 max-w-5xl mx-auto">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => { setSelectedCategory(cat.id); setSelectedCrop(""); setCurrentPage(1); }}
+                className={`px-8 py-3 rounded-full font-semibold text-base transition-all ${
+                  selectedCategory === cat.id
+                    ? "bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-lg"
+                    : "text-primary hover:bg-muted"
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
       <div className="container-nursery py-10">
+        {/* Crops Grid by Category */}
+        {selectedCategory && (
+          <div className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {allCrops
+                .filter((c) => c.categoryId === selectedCategory)
+                .map((crop) => (
+                  <motion.div
+                    key={crop.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-card border-2 border-accent/30 rounded-3xl p-6 hover:shadow-xl transition-all cursor-pointer"
+                    onClick={() => { setSelectedCrop(crop.id); setCurrentPage(1); }}
+                  >
+                    <h3 className="font-display text-2xl font-bold text-primary mb-4">{crop.name}</h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      <img src={crop.image} alt={crop.name} className="w-full h-32 object-cover rounded-xl" />
+                      <img src={crop.image} alt={crop.name} className="w-full h-32 object-cover rounded-xl" />
+                    </div>
+                  </motion.div>
+                ))}
+            </div>
+          </div>
+        )}
+
         <div className="flex gap-8">
           {/* ===== SIDEBAR FILTER ===== */}
           <aside className={`hidden lg:block w-72 shrink-0 transition-all ${sidebarOpen ? "opacity-100" : "opacity-0 w-0"}`} id="product-sidebar">
