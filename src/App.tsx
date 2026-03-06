@@ -21,6 +21,7 @@ import Contact from "./pages/Contact";
 import Grafting from "./pages/Grafting";
 import Gallery from "./pages/Gallery";
 import Process from "./pages/Process";
+import Infrastructure from "./pages/Infrastructure";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ const App = () => (
               <Route path="/grafting" element={<Grafting />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/process" element={<Process />} />
+              <Route path="/infrastructure" element={<Infrastructure />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

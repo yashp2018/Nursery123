@@ -199,6 +199,11 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </Link>
             
+            <Link to="/infrastructure" className="group relative px-3 py-2">
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Infrastructure</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </Link>
+            
             <Link to="/gallery" className="group relative px-3 py-2">
               <span className="font-medium text-foreground group-hover:text-primary transition-colors">Gallery</span>
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
@@ -270,6 +275,7 @@ export default function Header() {
                   { to: "/products", label: "Products" },
                   { to: "/grafting", label: "Grafting" },
                   { to: "/process", label: "Process" },
+                  { to: "/infrastructure", label: "Infrastructure" },
                   { to: "/gallery", label: "Gallery" },
                   { to: "/about", label: "About" },
                   { to: "/contact", label: "Contact" },

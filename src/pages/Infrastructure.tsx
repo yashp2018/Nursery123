@@ -1,0 +1,125 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+const infrastructureItems = [
+  {
+    title: "Seedling Tray Manufacturing",
+    description: "We manufacture high-quality seedling trays in-house for complete control over quality. Each tray is filled with premium coco peat and designed for optimal germination. Our trays ensure excellent nutrient availability and easy transplantation, with each cavity containing 1-2 seedlings for healthy root development.",
+    images: ["/placeholder-tray1.jpg", "/placeholder-tray2.jpg", "/placeholder-tray3.jpg"]
+  },
+  {
+    title: "Advanced Polyhouses",
+    description: "Our state-of-the-art polyhouses feature climate-controlled environments for year-round seedling production. Temperature, humidity, and light are automatically regulated to ensure optimal growing conditions. Special dark rooms and nutrient beds provide the perfect environment for seedling development with 98%+ success rates.",
+    images: ["/placeholder-poly1.jpg", "/placeholder-poly2.jpg", "/placeholder-poly3.jpg"]
+  },
+  {
+    title: "Automated Irrigation System",
+    description: "Our precision irrigation system uses automatic fogger technology to deliver exact water and nutrient dosages. This computer-controlled system prevents over-watering or under-watering, ensuring uniform growth across all seedlings. The system optimizes water usage while maintaining perfect moisture levels.",
+    images: ["/placeholder-water1.jpg", "/placeholder-water2.jpg", "/placeholder-water3.jpg"]
+  },
+  {
+    title: "Automatic Seeder Machine",
+    description: "Our imported automatic seeder machines ensure precise seed placement in each tray cavity. The machines are calibrated for different seed sizes and types, guaranteeing consistent germination rates. This automation increases efficiency while maintaining the highest quality standards.",
+    images: ["/placeholder-seed1.jpg", "/placeholder-seed2.jpg", "/placeholder-seed3.jpg"]
+  },
+  {
+    title: "Quality Control Laboratory",
+    description: "Our in-house laboratory conducts regular testing of seedling health, nutrient levels, and disease resistance. Every batch undergoes strict quality checks before dispatch. We maintain detailed records to ensure traceability and consistent quality across all our products.",
+    images: ["/placeholder-lab1.jpg", "/placeholder-lab2.jpg", "/placeholder-lab3.jpg"]
+  }
+];
+
+export default function Infrastructure() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-primary-light" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="container-nursery relative z-10 text-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+            <p className="text-accent text-sm font-semibold mb-3">World-Class Facilities</p>
+            <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+              Sanap Hi-Tech Nursery's<br />Infrastructure
+            </h1>
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+              28+ years of excellence backed by cutting-edge technology and modern facilities
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Infrastructure Cards */}
+      <section className="py-20 bg-background">
+        <div className="container-nursery max-w-5xl">
+          <div className="space-y-4">
+            {infrastructureItems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-card"
+              >
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-muted/50 transition-colors"
+                >
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-foreground">
+                    {item.title}
+                  </h3>
+                  <ChevronDown
+                    className={`w-6 h-6 text-primary transition-transform duration-300 ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${
+                    openIndex === index ? "max-h-[2000px]" : "max-h-0"
+                  }`}
+                >
+                  <div className="p-6 pt-0 space-y-6">
+                    <p className="text-foreground/80 leading-relaxed">{item.description}</p>
+                    <div className="grid grid-cols-3 gap-4">
+                      {item.images.map((img, i) => (
+                        <div key={i} className="aspect-video bg-muted rounded-xl overflow-hidden">
+                          <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
+                            Image {i + 1}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container-nursery text-center">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+            Visit Our Facility
+          </h2>
+          <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+            Experience our world-class infrastructure firsthand. Schedule a visit to see how we produce premium grafted seedlings.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105"
+          >
+            Schedule a Visit
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+}
