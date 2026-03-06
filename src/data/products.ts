@@ -44,6 +44,7 @@ export interface Variety {
   advantages?: string[];
   agronomicTips?: string[];
   characteristics?: VarietyCharacteristics;
+  availableMonths?: number[]; // 0-11 for Jan-Dec
 }
 
 export interface Category {
@@ -125,6 +126,7 @@ function v(
     advantages?: string[];
     agronomicTips?: string[];
     characteristics?: VarietyCharacteristics;
+    availableMonths?: number[];
   }
 ): Variety {
   return {
@@ -137,6 +139,7 @@ function v(
     advantages: extras?.advantages,
     agronomicTips: extras?.agronomicTips,
     characteristics: extras?.characteristics,
+    availableMonths: extras?.availableMonths,
   };
 }
 
@@ -171,6 +174,7 @@ export const sampleVarieties: Variety[] = [
       sowingSeason: "Spring, Autumn", harvestingSeason: "Spring, Autumn, Winter",
       vigour: "Superior", transplantingSeason: "Spring, Autumn",
     },
+    availableMonths: [3, 4, 5, 6, 7, 8, 9, 10], // Apr-Nov
   },
   v("tom-animesh", "Animesh (0108)", "Syngenta", "tomato", "Tomato", "vegetables", "Vegetable Plants", productTomato, 28, 1.50, 1.60, 0, 45000,
     "High-quality determinate tomato hybrid from Syngenta with excellent firmness and attractive red color. Suitable for open field cultivation.", ["Disease Resistant", "High Yield", "Firm Fruits", "Good Shelf Life"]),

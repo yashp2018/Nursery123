@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart, Clock, Building2 } from "lucide-react";
 import { Variety } from "@/data/products";
+import SeasonAvailability from "@/components/SeasonAvailability";
 
 interface ProductCardProps {
   variety: Variety;
@@ -54,6 +55,12 @@ export default function ProductCard({ variety }: ProductCardProps) {
         </h3>
 
         <p className="text-xs text-muted-foreground mb-4">Min order: {variety.minOrderQty.toLocaleString()} plants</p>
+
+        {variety.availableMonths && variety.availableMonths.length > 0 && (
+          <div className="mb-4">
+            <SeasonAvailability availableMonths={variety.availableMonths} />
+          </div>
+        )}
 
         <div className="flex items-end justify-between border-t border-border/50 pt-4">
           <div>
