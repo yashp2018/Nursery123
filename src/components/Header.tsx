@@ -136,27 +136,30 @@ export default function Header() {
               <AnimatePresence>
                 {dropdownOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-72 bg-card/98 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 overflow-hidden"
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-border/30 overflow-hidden"
                   >
-                    <div className="p-2">
-                      {categories.filter(c => c.crops.length > 0).map((cat) => (
-                        <Link
-                          key={cat.id}
-                          to={`/products?category=${cat.id}`}
-                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors group/item"
-                        >
-                          <div className="text-2xl">{cat.icon}</div>
-                          <div className="flex-1">
-                            <p className="font-semibold text-foreground group-hover/item:text-primary transition-colors">{cat.name}</p>
-                            <p className="text-xs text-muted-foreground">{cat.crops.length} crops available</p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
+                    {categories.filter(c => c.crops.length > 0).map((cat, idx) => (
+                      <Link
+                        key={cat.id}
+                        to={`/products?category=${cat.id}`}
+                        className={`flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group/item ${
+                          idx !== 0 ? 'border-t border-border/20' : ''
+                        }`}
+                      >
+                        <span className="text-xl">{cat.icon}</span>
+                        <span className="font-medium text-foreground group-hover/item:text-primary transition-colors">{cat.name}</span>
+                      </Link>
+                    ))}
+                    <Link
+                      to="/products"
+                      className="flex items-center justify-center gap-2 px-4 py-3 bg-primary/5 text-primary font-semibold text-sm hover:bg-primary/10 transition-colors border-t border-border/20"
+                    >
+                      View All Products →
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
