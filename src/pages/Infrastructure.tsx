@@ -6,27 +6,47 @@ const infrastructureItems = [
   {
     title: "Seedling Tray Manufacturing",
     description: "We manufacture high-quality seedling trays in-house for complete control over quality. Each tray is filled with premium coco peat and designed for optimal germination. Our trays ensure excellent nutrient availability and easy transplantation, with each cavity containing 1-2 seedlings for healthy root development.",
-    images: ["/placeholder-tray1.jpg", "/placeholder-tray2.jpg", "/placeholder-tray3.jpg"]
+    images: [
+      "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop"
+    ]
   },
   {
     title: "Advanced Polyhouses",
     description: "Our state-of-the-art polyhouses feature climate-controlled environments for year-round seedling production. Temperature, humidity, and light are automatically regulated to ensure optimal growing conditions. Special dark rooms and nutrient beds provide the perfect environment for seedling development with 98%+ success rates.",
-    images: ["/placeholder-poly1.jpg", "/placeholder-poly2.jpg", "/placeholder-poly3.jpg"]
+    images: [
+      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop"
+    ]
   },
   {
     title: "Automated Irrigation System",
     description: "Our precision irrigation system uses automatic fogger technology to deliver exact water and nutrient dosages. This computer-controlled system prevents over-watering or under-watering, ensuring uniform growth across all seedlings. The system optimizes water usage while maintaining perfect moisture levels.",
-    images: ["/placeholder-water1.jpg", "/placeholder-water2.jpg", "/placeholder-water3.jpg"]
+    images: [
+      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop"
+    ]
   },
   {
     title: "Automatic Seeder Machine",
     description: "Our imported automatic seeder machines ensure precise seed placement in each tray cavity. The machines are calibrated for different seed sizes and types, guaranteeing consistent germination rates. This automation increases efficiency while maintaining the highest quality standards.",
-    images: ["/placeholder-seed1.jpg", "/placeholder-seed2.jpg", "/placeholder-seed3.jpg"]
+    images: [
+      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=300&fit=crop"
+    ]
   },
   {
     title: "Quality Control Laboratory",
     description: "Our in-house laboratory conducts regular testing of seedling health, nutrient levels, and disease resistance. Every batch undergoes strict quality checks before dispatch. We maintain detailed records to ensure traceability and consistent quality across all our products.",
-    images: ["/placeholder-lab1.jpg", "/placeholder-lab2.jpg", "/placeholder-lab3.jpg"]
+    images: [
+      "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=400&h=300&fit=crop"
+    ]
   }
 ];
 
@@ -88,11 +108,13 @@ export default function Infrastructure() {
                     <p className="text-foreground/80 leading-relaxed">{item.description}</p>
                     <div className="grid grid-cols-3 gap-4">
                       {item.images.map((img, i) => (
-                        <div key={i} className="aspect-video bg-muted rounded-xl overflow-hidden">
-                          <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-                            Image {i + 1}
-                          </div>
-                        </div>
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`${item.title} ${i + 1}`}
+                          className="aspect-video bg-muted rounded-xl overflow-hidden object-cover w-full"
+                          loading="lazy"
+                        />
                       ))}
                     </div>
                   </div>
