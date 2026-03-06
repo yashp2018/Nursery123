@@ -136,50 +136,26 @@ export default function Header() {
               <AnimatePresence>
                 {dropdownOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 12, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 12, scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[520px] bg-card/95 backdrop-blur-xl rounded-2xl shadow-elevated border border-border/50 p-6"
+                    className="absolute top-full left-0 mt-2 w-72 bg-card/98 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 overflow-hidden"
                   >
-                    {/* Arrow */}
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-card/95 border-l border-t border-border/50 rotate-45" />
-
-                    <div className="grid grid-cols-2 gap-6 relative z-10">
+                    <div className="p-2">
                       {categories.filter(c => c.crops.length > 0).map((cat) => (
-                        <div key={cat.id}>
-                          <Link
-                            to={`/products?category=${cat.id}`}
-                            className="font-display font-bold text-sm text-primary mb-3 flex items-center gap-2 hover:text-primary-dark transition-colors"
-                          >
-                            <span className="text-xl">{cat.icon}</span> {cat.name}
-                          </Link>
-                          <div className="space-y-1">
-                            {cat.crops.map((crop) => (
-                              <Link
-                                key={crop.id}
-                                to={`/products?crop=${crop.id}`}
-                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors group/item"
-                              >
-                                <img src={crop.image} alt={crop.name} className="w-10 h-10 rounded-lg object-cover" />
-                                <div>
-                                  <p className="text-sm font-semibold text-foreground group-hover/item:text-primary transition-colors">{crop.name}</p>
-                                  <p className="text-xs text-muted-foreground">{crop.varieties} varieties</p>
-                                </div>
-                              </Link>
-                            ))}
+                        <Link
+                          key={cat.id}
+                          to={`/products?category=${cat.id}`}
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition-colors group/item"
+                        >
+                          <div className="text-2xl">{cat.icon}</div>
+                          <div className="flex-1">
+                            <p className="font-semibold text-foreground group-hover/item:text-primary transition-colors">{cat.name}</p>
+                            <p className="text-xs text-muted-foreground">{cat.crops.length} crops available</p>
                           </div>
-                        </div>
+                        </Link>
                       ))}
-                    </div>
-
-                    <div className="border-t border-border mt-4 pt-4">
-                      <Link
-                        to="/products"
-                        className="text-sm font-semibold text-primary hover:text-primary-dark transition-colors flex items-center gap-1"
-                      >
-                        View All Products →
-                      </Link>
                     </div>
                   </motion.div>
                 )}
