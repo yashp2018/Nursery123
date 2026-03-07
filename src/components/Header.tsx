@@ -207,14 +207,14 @@ export default function Header() {
 
             <Link
               to="/cart"
-              className="relative p-2.5 rounded-xl hover:bg-muted transition-all"
+              className="relative p-2.5 rounded-xl gradient-cta hover:shadow-elevated transition-all group"
             >
-              <ShoppingCart className="w-5 h-5 text-foreground" />
+              <ShoppingCart className="w-5 h-5 text-white" />
               {totalItems > 0 && (
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 w-5 h-5 gradient-cta text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center shadow-card"
+                  className="absolute -top-1 -right-1 w-5 h-5 bg-white text-accent text-[10px] font-bold rounded-full flex items-center justify-center shadow-card"
                 >
                   {totalItems > 99 ? "99+" : totalItems}
                 </motion.span>

@@ -149,7 +149,7 @@ export default function Index() {
             >
               <Link
                 to="/products"
-                className="bg-white text-primary border-2 border-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-gold transition-all hover:scale-105 flex items-center gap-2 btn-ripple"
+                className="gradient-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-gold transition-all hover:scale-105 flex items-center gap-2 btn-ripple"
               >
                 Explore Products <ArrowRight className="w-5 h-5" />
               </Link>
@@ -589,7 +589,7 @@ export default function Index() {
                 }`}
               >
                 {tier.highlight && (
-                  <span className="inline-block bg-white text-primary text-xs font-bold px-4 py-1 rounded-full mb-4">
+                  <span className="inline-block gradient-gold text-white text-xs font-bold px-4 py-1 rounded-full mb-4">
                     MOST POPULAR
                   </span>
                 )}
@@ -783,7 +783,7 @@ export default function Index() {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   to="/products"
-                  className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:shadow-gold transition-all hover:scale-105 btn-ripple"
+                  className="gradient-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-gold transition-all hover:scale-105 btn-ripple"
                 >
                   Browse Catalog
                 </Link>
