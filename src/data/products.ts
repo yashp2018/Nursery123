@@ -71,7 +71,7 @@ export interface CartItem {
 export const categories: Category[] = [
   {
     id: "vegetables",
-    name: "Vegetable Plants",
+    name: "Vegetable",
     icon: "🥬",
     crops: [
       { id: "tomato", name: "Tomato", categoryId: "vegetables", image: productTomato, varieties: 28 },
@@ -87,7 +87,7 @@ export const categories: Category[] = [
   },
   {
     id: "fruits",
-    name: "Fruit Plants",
+    name: "Fruit ",
     icon: "🍉",
     crops: [
       { id: "watermelon", name: "Watermelon", categoryId: "fruits", image: productWatermelon, varieties: 9 },
@@ -97,7 +97,7 @@ export const categories: Category[] = [
   },
   {
     id: "flowers",
-    name: "Flower Plants",
+    name: "Flower ",
     icon: "🌸",
     crops: [
       { id: "marigold", name: "Marigold", categoryId: "flowers", image: productCapsicum, varieties: 9 },
